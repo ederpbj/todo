@@ -11,6 +11,10 @@ Projeto Todo web e mobile
 
 [FiraCode](https://github.com/tonsky/FiraCode)
 
+Funções para trabalhar com data e hora
+
+[Date fns](https://date-fns.org/docs/)
+
 ## COMANDOS CMD
 
 #### Comando iniciais
