@@ -1,6 +1,10 @@
-const nome = 'eder'
+const express = require('express');
+const server = express();
 
-    ((((sakdjksla))))
-{ sdsd } { sdsd } [sdsd]
+server.listen(3000, () => {
+    console.log('API ONLINE');
+})
 
-if (nom != 'eder' => != => <=  )
+server.get('/teste', (req, res) => {
+    res.send('MUDEI A API!');
+})

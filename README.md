@@ -41,9 +41,19 @@ Projeto Todo web e mobile
 
 `npm i --save @zeit/next/css` //não realizado, fazer junto com arquivo next.config.js
 
-#### Demais pacotes
+#### Demais comandos
 
 `npm i express` pacote express para servidor
+
+`node src/index.js` rodar API
+
+`npm i -g nodemon` nodemon para reiniciar server automático
+
+`npm i nodemon -D` nodemon vai ser uma dependência de desenvolvimento
+
+`nodemon src/index.js` rodar API com nodemon
+
+`npm i mongoose` mongodb
 
 ## OUTRAS ALTERAÇÕES
 
@@ -54,5 +64,8 @@ Projeto Todo web e mobile
     "build": "next build", //construção
     "start": "next start" //produção
   },
+
+  "scripts": {
+    "dev": "nodemon src/index.js",
 
   
