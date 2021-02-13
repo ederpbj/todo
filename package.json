@@ -1,5 +1,5 @@
 {
-  "name": "todo",
+  "name": "todoBackend",
   "version": "1.0.0",
   "description": "Projeto Todo web e mobile",
   "main": "index.js",
@@ -11,13 +11,14 @@
     "url": "git+https://github.com/ederpbj/todo.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Éder Pires",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ederpbj/todo/issues"
   },
   "homepage": "https://github.com/ederpbj/todo#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "firacode": "^5.2.0",
     "next": "^10.0.6",
     "react": "^17.0.1",
