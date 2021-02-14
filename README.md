@@ -59,6 +59,8 @@ Funções para trabalhar com data e hora
 
 `npm i mongoose` mongodb
 
+`npm i date-fns` para trabalhar com data e hora
+
 ## OUTRAS ALTERAÇÕES
 
 * Adicionar linha no script do package
