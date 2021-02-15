@@ -5,7 +5,7 @@ const router = express.Router();
 const TaskController = require('../controller/TaskController');
 
 const TaskValidation = require('../middlewares/TaskValidation');
-const MacaddressValidation = require('../middlewares/MacaddressValidation');
+// const MacaddressValidation = require('../middlewares/MacaddressValidation');
 
 //Cria uma tarefa
 // Só executa create se passar pelo validation
@@ -24,22 +24,22 @@ router.delete('/:id', TaskController.delete);
 //Atualiza o done
 router.put('/:id/:done', TaskController.done);
 
-//Listar todos
-router.get('/filter/all', MacaddressValidation, TaskController.all);
+//Listar todos, não precisa validar
+router.get('/filter/all/:macaddress', TaskController.all);
 
 //Late: para datas atrasadas
-router.get('/filter/late', MacaddressValidation, TaskController.late);
+router.get('/filter/late/:macaddress', TaskController.late);
 
 //Today: tarefas de hoje
-router.get('/filter/today', MacaddressValidation, TaskController.today);
+router.get('/filter/today/:macaddress', TaskController.today);
 
 //Week: tarefas da semana
-router.get('/filter/week', MacaddressValidation, TaskController.week);
+router.get('/filter/week/:macaddress', TaskController.week);
 
 //Week: tarefas do mês
-router.get('/filter/month', MacaddressValidation, TaskController.month);
+router.get('/filter/month/:macaddress', TaskController.month);
 
 //Year: tarefas do ano
-router.get('/filter/year', MacaddressValidation, TaskController.year);
+router.get('/filter/year/:macaddress', TaskController.year);
 
 module.exports = router;

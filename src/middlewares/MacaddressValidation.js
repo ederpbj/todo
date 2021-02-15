@@ -1,3 +1,5 @@
+//Não foi mais necessário, foi retirado macaddress do corpo e colocado como params
+/*
 const MacaddressValidation = (req, res, next) => {
     //Se não existir o macaddress
     if (!req.body.macaddress) {
@@ -8,3 +10,4 @@ const MacaddressValidation = (req, res, next) => {
 };
 
 module.exports = MacaddressValidation;
+*/

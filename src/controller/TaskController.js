@@ -42,7 +42,8 @@ class TaskController {
 
     //Lista todas
     async all(req, res) {
-        await TaskModel.find({ macaddress: { '$in': req.body.macaddress } }) //$in: para valores que existem
+        //mudar req.body.macaddress para req.params, não recuparar mais pelo corpo e sim por params, = no http
+        await TaskModel.find({ macaddress: { '$in': req.params.macaddress } }) //$in: para valores que existem
             .sort('when') //organiza por data
             .then(response => {
                 return res.status(200).json(response) // se der tudo certo
@@ -107,7 +108,7 @@ class TaskController {
                 'when': {
                     '$lt': current
                 },
-                'macaddress': { '$in': req.body.macaddress }//precisa informar no corpo da operação o macaddress
+                'macaddress': { '$in': req.params.macaddress }//precisa informar no corpo da operação o macaddress
             }) //$lt: operador menor que <
             .sort('when') // organiza pela data
             .then(response => {
@@ -123,7 +124,7 @@ class TaskController {
         await TaskModel
             //Vai no mongo e pega datas do dia, baseadas no macaddress
             .find({
-                'macaddress': { '$in': req.body.macaddress },
+                'macaddress': { '$in': req.params.macaddress },
                 'when': { '$gte': startOfDay(current), '$lte': endOfDay(current) } //data maior ou igual que (>= $gte), inicio do dia atual. e menor ou igual ($lte) que fim do dia
             })
             .sort('when')
@@ -140,7 +141,7 @@ class TaskController {
         await TaskModel
             //Vai no mongo e pega datas do dia, baseadas no macaddress
             .find({
-                'macaddress': { '$in': req.body.macaddress },
+                'macaddress': { '$in': req.params.macaddress },
                 'when': { '$gte': startOfWeek(current), '$lte': endOfWeek(current) } //data maior ou igual que (>= $gte), inicio do dia atual. e menor ou igual ($lte) que fim do dia
             })
             .sort('when')
@@ -157,7 +158,7 @@ class TaskController {
         await TaskModel
             //Vai no mongo e pega datas do dia, baseadas no macaddress
             .find({
-                'macaddress': { '$in': req.body.macaddress },
+                'macaddress': { '$in': req.params.macaddress },
                 'when': { '$gte': startOfMonth(current), '$lte': endOfMonth(current) } //data maior ou igual que (>= $gte), inicio do dia atual. e menor ou igual ($lte) que fim do dia
             })
             .sort('when')
@@ -174,7 +175,7 @@ class TaskController {
         await TaskModel
             //Vai no mongo e pega datas do dia, baseadas no macaddress
             .find({
-                'macaddress': { '$in': req.body.macaddress },
+                'macaddress': { '$in': req.params.macaddress },
                 'when': { '$gte': startOfYear(current), '$lte': endOfYear(current) } //data maior ou igual que (>= $gte), inicio do dia atual. e menor ou igual ($lte) que fim do dia
             })
             .sort('when')
