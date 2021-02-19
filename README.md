@@ -61,6 +61,8 @@ Funções para trabalhar com data e hora
 
 `npm i date-fns` para trabalhar com data e hora
 
+`npm i cors` instalar bibliotéca em conflito
+
 ## OUTRAS ALTERAÇÕES
 
 * Adicionar linha no script do package
