@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const server = express();
 
+server.use(cors());
 server.use(express.json()); //informa que envia e recebe formato json do server
 
 server.listen(3001, () => {
