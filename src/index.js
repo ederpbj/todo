@@ -3,7 +3,7 @@ const server = express();
 
 server.use(express.json()); //informa que envia e recebe formato json do server
 
-server.listen(3000, () => {
+server.listen(3001, () => {
     console.log('API ONLINE');
 })
 
